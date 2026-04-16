@@ -1,0 +1,26 @@
+---
+title: Connect to Postiz
+sidebarTitle: Connect
+---
+
+## Connect Postiz in Nango
+
+Use your Postiz OAuth app credentials when creating the integration:
+
+- **Client ID** (`pca_...`)
+- **Client Secret** (`pcs_...`)
+
+Nango will handle the redirect-based OAuth flow and store the returned Postiz access token.
+
+## Before you start
+
+1. In Postiz, go to **Settings > Developers > Apps**.
+2. Create an OAuth app.
+3. Set the redirect URL to the callback URL shown by Nango.
+4. Copy the generated client ID and client secret.
+
+## Notes
+
+- Postiz authorization happens at `https://platform.postiz.com/oauth/authorize`
+- Token exchange happens at `https://api.postiz.com/oauth/token`
+- API requests use the returned token directly in the `Authorization` header.

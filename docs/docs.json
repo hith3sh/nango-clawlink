@@ -733,6 +733,7 @@
               "api-integrations/pleo",
               "integrations/all/podium",
               "api-integrations/posthog",
+              "integrations/all/postiz",
               "api-integrations/practicefusion",
               "api-integrations/printful",
               "integrations/all/prive",

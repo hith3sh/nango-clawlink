@@ -1,0 +1,57 @@
+---
+title: Postiz
+sidebarTitle: Postiz
+---
+
+import Overview from "/snippets/overview.mdx"
+import PreBuiltTooling from "/snippets/generated/postiz/PreBuiltTooling.mdx"
+import PreBuiltUseCases from "/snippets/generated/postiz/PreBuiltUseCases.mdx"
+
+<Overview />
+<PreBuiltTooling />
+<PreBuiltUseCases />
+
+## Setup guide
+
+### Step 1: Create a Postiz OAuth app
+
+In Postiz, go to **Settings > Developers > Apps** and create an OAuth application.
+
+Copy:
+
+- **Client ID** (starts with `pca_`)
+- **Client Secret** (starts with `pcs_`)
+
+Set your redirect URL to the one Nango shows during integration setup.
+
+### Step 2: Configure the integration in Nango
+
+Use these credentials in Nango:
+
+- **Client ID**
+- **Client Secret**
+
+### Step 3: Authorize the connection
+
+Nango will redirect users to Postiz consent at:
+
+- `https://platform.postiz.com/oauth/authorize`
+
+After approval, Nango exchanges the returned code at:
+
+- `https://api.postiz.com/oauth/token`
+
+## Useful links
+
+- [Postiz Public API overview](https://docs.postiz.com/public-api/introduction)
+- [Postiz OAuth2 docs](https://docs.postiz.com/public-api/oauth)
+
+## API gotchas
+
+- Postiz public API tokens are sent in the `Authorization` header without a `Bearer ` prefix.
+- Postiz OAuth access tokens currently do not expire according to the public docs.
+- Public API base URL is `https://api.postiz.com/public/v1` for Postiz Cloud.
+
+<Card title="Connect to Postiz" icon="link" href="/integrations/all/postiz/connect" horizontal>
+  Guide to connect to Postiz using Connect UI
+</Card>

@@ -13454,6 +13454,35 @@ podium:
             title: API Version
             description: The API version of your Podium account
 
+postiz:
+    display_name: Postiz
+    categories:
+        - marketing
+        - communication
+    auth_mode: OAUTH2
+    authorization_url: https://platform.postiz.com/oauth/authorize
+    token_url: https://api.postiz.com/oauth/token
+    body_format: json
+    disable_pkce: true
+    authorization_params:
+        response_type: code
+    token_params:
+        grant_type: authorization_code
+    token_response:
+        token: access_token
+    proxy:
+        base_url: https://api.postiz.com/public/v1
+        headers:
+            authorization: ${accessToken}
+        verification:
+            method: GET
+            headers:
+                content-type: application/json
+            endpoints:
+                - /integrations
+    docs: https://nango.dev/docs/integrations/all/postiz
+    docs_connect: https://nango.dev/docs/integrations/all/postiz/connect
+
 posthog:
     display_name: PostHog
     categories:
